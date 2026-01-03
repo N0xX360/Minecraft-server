@@ -1,0 +1,244 @@
+---- Minecraft Crash Report ----
+// Ooh. Shiny.
+
+Time: 2026-01-02 22:32:50
+Description: Exception in server tick loop
+
+org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:250) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.service.modlauncher.MixinTransformationHandler.processClass(MixinTransformationHandler.java:131) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.launch.MixinLaunchPluginLegacy.processClass(MixinLaunchPluginLegacy.java:131) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at cpw.mods.modlauncher.serviceapi.ILaunchPluginService.processClassWithFlags(ILaunchPluginService.java:156) ~[modlauncher-10.0.9.jar%2355!/:10.0.9+10.0.9+main.dcd20f30] {}
+	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:113) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at net.minecraft.server.level.ChunkMap.<init>(ChunkMap.java:175) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-common.mixins.json:bugfix.paper_chunk_patches.ChunkMapMixin,pl:mixin:APP:modernfix-forge.mixins.json:bugfix.chunk_deadlock.ChunkMapLoadMixin,pl:mixin:APP:servercore.common.mixins.json:features.dynamic.ChunkMapMixin,pl:mixin:APP:valkyrienskies-common.mixins.json:accessors.server.level.ChunkMapAccessor,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.save_mob_location_on_ship.MixinChunkMap,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.tick_ship_chunks.MixinChunkMap,pl:mixin:APP:valkyrienskies-common.mixins.json:server.world.MixinChunkMap,pl:mixin:A}
+	at net.minecraft.server.level.ServerChunkCache.<init>(ServerChunkCache.java:77) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:servercore.common.mixins.json:optimizations.ticking.chunk.broadcast.ServerChunkCacheMixin,pl:mixin:APP:servercore.common.mixins.json:optimizations.ticking.chunk.cache.ServerChunkCacheMixin,pl:mixin:APP:servercore.common.mixins.json:optimizations.ticking.chunk.random.ServerChunkCacheMixin,pl:mixin:APP:canary.mixins.json:alloc.chunk_ticking.ServerChunkCacheMixin,pl:mixin:APP:canary.mixins.json:world.chunk_access.ServerChunkCacheMixin,pl:mixin:APP:valkyrienskies-common.mixins.json:accessors.server.level.ServerChunkCacheAccessor,pl:mixin:APP:valkyrienskies-common.mixins.json:world.chunk.MixinServerChunkCache,pl:mixin:APP:modernfix-forge.mixins.json:bugfix.chunk_deadlock.ServerChunkCache_CurrentLoadingMixin,pl:mixin:A}
+	at net.minecraft.server.level.ServerLevel.<init>(ServerLevel.java:209) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:betterendisland.mixins.json:ServerLevelMixin,pl:mixin:APP:servercore.common.mixins.json:optimizations.ticking.chunk.random.ServerLevelMixin,pl:mixin:APP:bettercaves.mixins.json:ServerLevelMixin,pl:mixin:APP:bettercaves.mixins.json:aquiferfix.ServerLevelMixin,pl:mixin:APP:modernfix-common.mixins.json:bugfix.chunk_deadlock.ServerLevelMixin,pl:mixin:APP:modernfix-common.mixins.json:perf.cache_strongholds.ServerLevelMixin,pl:mixin:APP:modernfix-common.mixins.json:perf.faster_structure_location.ServerLevelMixin,pl:mixin:APP:fabric-data-attachment-api-v1.mixins.json:ServerWorldMixin,pl:mixin:APP:servercore.common.mixins.json:features.activation_range.ServerLevelMixin,pl:mixin:APP:servercore.common.mixins.json:features.spawn_chunks.ServerLevelMixin,pl:mixin:APP:servercore.common.mixins.json:optimizations.sync_loads.ServerLevelMixin,pl:mixin:APP:mixin.tt20.json:world.ServerLevelMixin,pl:mixin:APP:betterdeserttemples.mixins.json:ServerLevelMixin,pl:mixin:APP:canary.mixins.json:alloc.chunk_random.ServerLevelMixin,pl:mixin:APP:canary.mixins.json:chunk.replace_streams.ServerLevelMixin,pl:mixin:APP:canary.mixins.json:entity.inactive_navigations.ServerLevelMixin,pl:mixin:APP:canary.mixins.json:profiler.ServerLevelMixin,pl:mixin:APP:canary.mixins.json:util.accessors.ServerLevelAccessor,pl:mixin:APP:canary.mixins.json:world.block_entity_ticking.sleeping.ServerLevelMixin,pl:mixin:APP:createbigcannons-common.mixins.json:ServerLevelMixin,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.shipyard_entities.MixinServerLevel,pl:mixin:APP:valkyrienskies-common.mixins.json:server.world.MixinServerLevel,pl:mixin:APP:drivebywire.mixins.json:MixinServerLevel,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor,pl:mixin:APP:betterendisland.mixins.json:EndergeticExpansionMixins,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_129815_(MinecraftServer.java:337) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130006_(MinecraftServer.java:308) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.dedicated.DedicatedServer.m_7038_(DedicatedServer.java:164) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:634) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23339!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {re:mixin}
+Caused by: org.spongepowered.asm.mixin.throwables.MixinApplyError: Mixin [valkyrienskies-common.mixins.json:feature.poi.MixinPOIManager] from phase [DEFAULT] in config [valkyrienskies-common.mixins.json] FAILED during APPLY
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinError(MixinProcessor.java:636) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.handleMixinApplyError(MixinProcessor.java:588) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:379) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	... 22 more
+Caused by: org.spongepowered.asm.mixin.injection.throwables.InvalidInjectionException: @At("INVOKE") on net/minecraft/world/entity/ai/village/poi/PoiManager::onGetInRange with priority 1000 cannot inject into net/minecraft/world/entity/ai/village/poi/PoiManager::m_27181_(Ljava/util/function/Predicate;Lnet/minecraft/core/BlockPos;ILnet/minecraft/world/entity/ai/village/poi/PoiManager$Occupancy;)Ljava/util/stream/Stream; merged by com.abdelaziz.canary.mixin.ai.poi.PoiManagerMixin with priority 1000 [PREINJECT Applicator Phase -> valkyrienskies-common.mixins.json:feature.poi.MixinPOIManager -> Prepare Injections ->  -> wrapOperation$cca000$onGetInRange(Ljava/util/stream/Stream;Ljava/util/function/Predicate;Lcom/llamalad7/mixinextras/injector/wrapoperation/Operation;Lnet/minecraft/core/BlockPos;I)Ljava/util/stream/Stream; -> Prepare]
+	at org.spongepowered.asm.mixin.injection.code.Injector.findTargetNodes(Injector.java:305) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.injection.code.Injector.find(Injector.java:240) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.injection.struct.InjectionInfo.prepare(InjectionInfo.java:421) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at com.llamalad7.mixinextras.injector.wrapoperation.WrapOperationInjectionInfo.prepare(WrapOperationInjectionInfo.java:38) ~[MixinExtras-0.5.0-rc.2.jar%23432!/:0.5.0-rc.2] {re:classloading}
+	at com.llamalad7.mixinextras.wrapper.InjectorWrapperImpl.prepare(InjectorWrapperImpl.java:56) ~[MixinExtras-0.5.0-rc.2.jar%23432!/:0.5.0-rc.2] {re:classloading}
+	at com.llamalad7.mixinextras.sugar.impl.SugarWrapperImpl.prepare(SugarWrapperImpl.java:70) ~[MixinExtras-0.5.0-rc.2.jar%23432!/:0.5.0-rc.2] {re:classloading}
+	at com.llamalad7.mixinextras.wrapper.WrapperInjectionInfo.prepare(WrapperInjectionInfo.java:64) ~[MixinExtras-0.5.0-rc.2.jar%23432!/:0.5.0-rc.2] {re:classloading}
+	at org.spongepowered.asm.mixin.transformer.MixinTargetContext.prepareInjections(MixinTargetContext.java:1319) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.prepareInjections(MixinApplicatorStandard.java:1042) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.applyMixin(MixinApplicatorStandard.java:393) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinApplicatorStandard.apply(MixinApplicatorStandard.java:325) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.apply(TargetClassContext.java:383) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:365) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[mixin-0.8.5.jar%2365!/:0.8.5+Jenkins-b310.git-155314e6e91465dad727e621a569906a410cd6f4] {}
+	... 22 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1030-azure
+	Java Version: 17.0.17, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 506243632 bytes (482 MiB) / 2147483648 bytes (2048 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7997.99
+	Virtual memory used (MB): 5173.81
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx12G
+	Server Running: true
+	Player Count: 0 / 20; []
+	Data Packs: vanilla, mod:forge, mod:yungsextras, mod:mr_dungeons_andtavernspillageroutpostrework (incompatible), mod:mr_dungeons_andtaverns (incompatible), mod:yungsapi, mod:betterdungeons, mod:betterstrongholds, mod:betterwitchhuts, mod:betterdeserttemples, mod:hopour (incompatible), mod:mr_dungeons_andtavernsstrongholdrework (incompatible), mod:hoporp (incompatible), mod:betterendisland, mod:betteroceanmonuments, mod:mr_dungeons_andtavernsswamphutrework (incompatible), mod:betterfortresses, mod:hopo, mod:bettermineshafts, mod:bettercaves, mod:mr_dungeons_andtavernsancientcityoverhaul (incompatible), mod:dungeons_arise, mod:betterjungletemples, mod:resourcefulconfig (incompatible), mod:servercore (incompatible), mod:canary, mod:resourcefullib (incompatible), mod:structure_layout_optimizer, mod:fast_event (incompatible), mod:flywheel, mod:ponder (incompatible), mod:create, create:dynamic_data, mod:universalbonemeal, mod:naturalcharcoal, mod:mr_ore_plus, mod:collective, mod:puzzleslib, mod:puzzlesaccessapi, mod:exporbrecall, mod:mineralchance, mod:runiclib (incompatible), mod:moredelight (incompatible), mod:farmersdelight, mod:vanilladelight, mod:endersdelight, mod:some_assembly_required, mod:miners_delight (incompatible), mod:mynethersdelight, mod:dungeonsdelight (incompatible), mod:grabbymobs, mod:zombiehorsespawn, mod:skeletonhorsespawn, mod:dynamiclights, mod:kuma_api, mod:fastload, mod:trashslot, mod:modernfix (incompatible), mod:balm, mod:corpse, mod:ferritecore (incompatible), mod:artifacts, mod:fabric_data_attachment_api_v1, mod:togenc (incompatible), mod:cloth_config (incompatible), mod:artifactscrafting, mod:fabric_api_base, mod:toolbelt (incompatible), mod:curios, mod:fabric_entity_events_v1, mod:accessories, mod:architectury (incompatible), mod:fabric_object_builder_api_v1, mod:expandability (incompatible), mod:create_things_and_misc, mod:create_jetpack (incompatible), mod:create_cyber_goggles, mod:fluid, mod:create_tank_defenses, mod:ritchiesprojectilelib (incompatible), mod:createmr, mod:create_more_additions, mod:createdieselgenerators (incompatible), mod:create_jetpack_curios, mod:create_connected, mod:cmparallelpipes, mod:createmoredrillheads, mod:flightlib (incompatible), mod:createnuclear, mod:create_tweaked_controllers, mod:tt20, mod:moreburners, mod:bits_n_bobs, mod:copycats (incompatible), mod:caelus (incompatible), mod:createhorsepower, mod:create_compressed, mod:create_ultimate_factory, mod:create_overpowered, mod:create_furnace_lava_adapter, mod:createsifter (incompatible), mod:createoreexcavation (incompatible), mod:createendertransmission, mod:kelvin (incompatible), mod:kotlinforforge (incompatible), mod:create_simple_ore_doubling, mod:mr_create_renewablebrass, mod:create_radar, mod:createbigcannons (incompatible), mod:create_structures, mod:create_central_kitchen, mod:create_mechanical_extruder, mod:createmetalwork (incompatible), mod:createornithopterglider, mod:sliceanddice (incompatible), mod:createenchantablemachinery, mod:crushingwheelrecipeselector, mod:create_crushing_quartz, mod:createcompression, mod:create_ironworks, mod:cbc_at (incompatible), mod:create_more_features, mod:create_power_loader, mod:valkyrienskies (incompatible), mod:vs_clockwork (incompatible), mod:trackwork (incompatible), mod:drivebywire (incompatible), mod:createenderlink, mod:create_enchantment_industry (incompatible), mod:create_structures_arise, mod:createaddition (incompatible), mod:delivery_director, create_central_kitchen:farmersdelight (incompatible), create_central_kitchen:miners_delight (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		kotlinforforge@4.12.0
+		javafml@null
+		lowcodefml@null
+	Mod List: 
+		🏰 dungeons-and-taverns-pillager-outpost-rework-1.|Dungeons and Taverns Pillager |mr_dungeons_andtavernspillager|1.1                 |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterDungeons-1.20-Forge-4.0.4.jar       |YUNG's Better Dungeons        |betterdungeons                |1.20-Forge-4.0.4    |DONE      |Manifest: NOSIGNATURE
+		kuma-api-forge-20.1.12+1.20.1.jar                 |KumaAPI                       |kuma_api                      |20.1.12             |DONE      |Manifest: NOSIGNATURE
+		⚙️create_misc_and_things_ 1.20.1_4.0A.jar         |create: things and misc       |create_things_and_misc        |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		🧟‍♂️⤴️grabbymobs-1.20.1-1.6.jar                  |Grabby Mobs                   |grabbymobs                    |1.6                 |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterWitchHuts-1.20-Forge-3.0.3.jar      |YUNG's Better Witch Huts      |betterwitchhuts               |1.20-Forge-3.0.3    |DONE      |Manifest: NOSIGNATURE
+		🧟‍♂️⤴️zombiehorsespawn-1.20.1-5.2.jar            |Zombie Horse Spawn            |zombiehorsespawn              |5.2                 |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar |YUNG's Better Ocean Monuments |betteroceanmonuments          |1.20-Forge-3.0.4    |DONE      |Manifest: NOSIGNATURE
+		🪵naturalcharcoal-1.20.1-1.1.jar                  |Natural Charcoal              |naturalcharcoal               |1.1                 |DONE      |Manifest: NOSIGNATURE
+		👀dynamiclights-v1.9-mc1.17-1.21.9-mod.jar        |Dynamic Lights                |dynamiclights                 |1.9+mod             |DONE      |Manifest: NOSIGNATURE
+		⚙️🕶️create_jetpack-forge-4.4.6.jar               |Create Jetpack                |create_jetpack                |4.4.6               |DONE      |Manifest: NOSIGNATURE
+		⚙️👀create_cyber_goggles-1.20.1-6.7.7-Forge.jar   |Create: Cyber Goggles         |create_cyber_goggles          |6.7.7               |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterCaves-1.20.1-Forge-2.0.5.jar        |YUNG's Better Caves           |bettercaves                   |1.20.1-Forge-2.0.5  |DONE      |Manifest: NOSIGNATURE
+		⚙️fluid-1.20-1.1.8.jar                            |Create Fluid                  |fluid                         |1.1.6               |DONE      |Manifest: NOSIGNATURE
+		⚙️CreateTankDefenses v0.80.jar                    |Create: Tank Defenses         |create_tank_defenses          |0.80                |DONE      |Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-ancient-city-overhaul-1.ja|Dungeons and Taverns Ancient C|mr_dungeons_andtavernsancientc|1                   |DONE      |Manifest: NOSIGNATURE
+		_📚ritchiesprojectilelib-2.1.1+mc.1.20.1-forge.jar|Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.1               |DONE      |Manifest: NOSIGNATURE
+		-📈modernfix-forge-5.25.2+mc1.20.1.jar            |ModernFix                     |modernfix                     |5.25.2+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		⚙️createmr-1.20.1-0.0.7.jar                       |Create More Renewable         |createmr                      |1.20.1-0.0.7        |DONE      |Manifest: NOSIGNATURE
+		_📚YungsApi-1.20-Forge-4.0.6.jar                  |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |DONE      |Manifest: NOSIGNATURE
+		fabric-data-attachment-api-v1-1.0.0+30ef839e77.jar|Fabric Data Attachment API (v1|fabric_data_attachment_api_v1 |1.0.0+30ef839e77    |DONE      |Manifest: NOSIGNATURE
+		⚙️create_more_additions-1.6.0-forge-1.20.1.jar    |Create Crafts & (More) Additio|create_more_additions         |1.6.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️createdieselgenerators-1.20.1-1.3.5.jar         |Create Diesel Generators      |createdieselgenerators        |1.20.1-1.3.5        |DONE      |Manifest: NOSIGNATURE
+		🧟‍♂️⤴️skeletonhorsespawn-1.20.1-4.1.jar          |Skeleton Horse Spawn          |skeletonhorsespawn            |4.1                 |DONE      |Manifest: NOSIGNATURE
+		_📚balm-forge-1.20.1-7.3.37-all.jar               |Balm                          |balm                          |7.3.37              |DONE      |Manifest: NOSIGNATURE
+		📕ToggleEnchantments-FORGE-1.20.[0-1]-v1.2.jar    |Toggle Enchantments           |togenc                        |1.2                 |DONE      |Manifest: NOSIGNATURE
+		-📈structure_layout_optimizer-forge-1.0.11.jar    |Structure Layout Optimizer    |structure_layout_optimizer    |1.0.11              |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterNetherFortresses-1.20-Forge-2.0.6.ja|YUNG's Better Nether Fortresse|betterfortresses              |1.20-Forge-2.0.6    |DONE      |Manifest: NOSIGNATURE
+		_📚cloth-config-11.1.136-forge.jar                |Cloth Config v10 API          |cloth_config                  |11.1.136            |DONE      |Manifest: NOSIGNATURE
+		🪵mineralchance-1.20.1-3.8.jar                    |Mineral Chance                |mineralchance                 |3.8                 |DONE      |Manifest: NOSIGNATURE
+		⚙️⛓️create_jetpack_curios-1.2.0-forge-1.20.1.jar  |Create: Jetpack Curios        |create_jetpack_curios         |1.2.0               |DONE      |Manifest: NOSIGNATURE
+		📦corpse-forge-1.20.1-1.0.23.jar                  |Corpse                        |corpse                        |1.20.1-1.0.23       |DONE      |Manifest: NOSIGNATURE
+		⚙️📦create_connected-1.1.10-mc1.20.1-all.jar      |Create: Connected             |create_connected              |1.1.10-mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		🍞 FarmersDelight-1.20.1-1.2.9.jar                |Farmer's Delight              |farmersdelight                |1.20.1-1.2.9        |DONE      |Manifest: NOSIGNATURE
+		⚙️💮cmparallelpipes-1-20.1-1.1.3.jar              |Create More: Parallel Pipes   |cmparallelpipes               |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		🍞 endersdelight-forge-1.20.1-1.1.3.jar           |Ender's Delight               |endersdelight                 |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-stronghold-rework-1.jar   |Dungeons and Taverns Stronghol|mr_dungeons_andtavernsstrongho|1                   |DONE      |Manifest: NOSIGNATURE
+		⚙️📦createmoredrillheads-2.1.0-1.20.1.jar         |Create: More Drill Heads      |createmoredrillheads          |2.1.0-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		_📚resourcefulconfig-forge-1.20.1-2.1.3.jar       |Resourcefulconfig             |resourcefulconfig             |2.1.3               |DONE      |Manifest: NOSIGNATURE
+		-📈servercore-forge-1.5.2+1.20.1.jar              |ServerCore                    |servercore                    |1.5.2+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		🕶️accessories_cclayer-7.4.0-beta.18+1.20.1.jar   |curios                        |curios                        |7.4.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		🪵ore_plus-2.15.41.2-x4.jar                       |Ore Plus                      |mr_ore_plus                   |2.15.41.2-x4        |DONE      |Manifest: NOSIGNATURE
+		_📚collective-1.20.1-8.13.jar                     |Collective                    |collective                    |8.13                |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsExtras-1.20-Forge-4.0.3.jar               |YUNG's Extras                 |yungsextras                   |1.20-Forge-4.0.3    |DONE      |Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-3.0.3.f.jar               |Dungeons and Taverns          |mr_dungeons_andtaverns        |3.0.3.f             |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterStrongholds-1.20-Forge-4.0.3.jar    |YUNG's Better Strongholds     |betterstrongholds             |1.20-Forge-4.0.3    |DONE      |Manifest: NOSIGNATURE
+		fabric-entity-events-v1-1.6.0+6274ab9d77.jar      |Fabric Entity Events (v1)     |fabric_entity_events_v1       |1.6.0+6274ab9d77    |DONE      |Manifest: NOSIGNATURE
+		🕶️accessories-neoforge-1.0.0-beta.48+1.20.1.jar  |Accessories                   |accessories                   |1.0.0-beta48+1.20.1 |DONE      |Manifest: NOSIGNATURE
+		_📚resourcefullib-forge-1.20.1-2.1.29.jar         |Resourceful Lib               |resourcefullib                |2.1.29              |DONE      |Manifest: NOSIGNATURE
+		_📚architectury-9.2.14-forge.jar                  |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterEndIsland-1.20-Forge-2.0.6.jar      |YUNG's Better End Island      |betterendisland               |1.20-Forge-2.0.6    |DONE      |Manifest: NOSIGNATURE
+		flightlib-forge-2.2.2.jar                         |Flight Lib                    |flightlib                     |2.2.2               |DONE      |Manifest: NOSIGNATURE
+		🏰 HopoBetterMineshaft-[1.20.1-1.20.4]-1.2.2d.jar |HopoBetterMineshaft           |hopo                          |1.2.2               |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterMineshafts-1.20-Forge-4.0.4.jar     |YUNG's Better Mineshafts      |bettermineshafts              |1.20-Forge-4.0.4    |DONE      |Manifest: NOSIGNATURE
+		-📈FastEvent-1.20.1-1.1.1.jar                     |FastEvent                     |fast_event                    |1.1.1               |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterJungleTemples-1.20-Forge-2.0.5.jar  |YUNG's Better Jungle Temples  |betterjungletemples           |1.20-Forge-2.0.5    |DONE      |Manifest: NOSIGNATURE
+		⚙️createnuclear-1.3.1-forge.jar                   |Create Nuclear                |createnuclear                 |1.3.1               |DONE      |Manifest: NOSIGNATURE
+		⚙️create_tweaked_controllers-1.20.1-1.2.5.jar     |Create: Tweaked Controllers   |create_tweaked_controllers    |1.20.1-1.2.5        |DONE      |Manifest: NOSIGNATURE
+		-📈Fastload-Reforged-mc1.20.1-3.4.0.jar           |Fastload-Reforged             |fastload                      |3.4.0               |DONE      |Manifest: NOSIGNATURE
+		🎒⤵️ trashslot-forge-1.20-15.1.1.jar              |TrashSlot                     |trashslot                     |15.1.1              |DONE      |Manifest: NOSIGNATURE
+		tt20-0.7.1+mc1.20.1.jar                           |TT20                          |tt20                          |0.7.1               |DONE      |Manifest: NOSIGNATURE
+		⚙️moreburners-1.20.1-0.3.4.jar                    |More Create Burners           |moreburners                   |1.20.1-0.3.4        |DONE      |Manifest: NOSIGNATURE
+		⚙️📦bits_n_bobs-0.0.35.jar                        |Create Bits 'n' Bobs          |bits_n_bobs                   |0.0.35              |DONE      |Manifest: NOSIGNATURE
+		⚙️copycats-3.0.4+mc.1.20.1-forge.jar              |Create: Copycats+             |copycats                      |3.0.4+mc.1.20.1-forg|DONE      |Manifest: NOSIGNATURE
+		🪵UniversalBoneMeal-v8.0.1-1.20.1-Forge.jar       |Universal Bone Meal           |universalbonemeal             |8.0.1               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		_caelus-forge-3.2.0+1.20.1.jar                    |Caelus API                    |caelus                        |3.2.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		🕶️artifacts-forge-9.5.16.jar                     |Artifacts                     |artifacts                     |9.5.16              |DONE      |Manifest: NOSIGNATURE
+		_📚forge-runiclib-1.20.1-4.3.7.jar                |RunicLib                      |runiclib                      |4.3.7               |DONE      |Manifest: NOSIGNATURE
+		🏰 YungsBetterDesertTemples-1.20-Forge-3.0.3.jar  |YUNG's Better Desert Temples  |betterdeserttemples           |1.20-Forge-3.0.3    |DONE      |Manifest: NOSIGNATURE
+		🏰 HopoBetterUnderwaterRuins-[1.20.1-1.20.4]-1.1.5|HopoBetterUnderwaterRuins     |hopour                        |1.1.4               |DONE      |Manifest: NOSIGNATURE
+		⚙️createhorsepower-1.20.1-1.1.0.jar               |Create Horse Power            |createhorsepower              |1.20.1-1.1.0        |DONE      |Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-swamp-hut-rework-1.jar    |Dungeons and Taverns Swamp Hut|mr_dungeons_andtavernsswamphut|1                   |DONE      |Manifest: NOSIGNATURE
+		🍞 moredelight-25.07.28-1.20-forge.jar            |More Delight                  |moredelight                   |25.07.28-1.20-forge |DONE      |Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.13-universal.jar                |Forge                         |forge                         |47.4.13             |DONE      |Manifest: NOSIGNATURE
+		🏰DungeonsArise-1.20.x-2.1.58-release.jar         |When Dungeons Arise           |dungeons_arise                |2.1.58-1.20.x       |DONE      |Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		artifactscrafting-1.0.0-forge-1.20.1.jar          |Artifacts Crafting            |artifactscrafting             |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️🗜️create_compressed-2.1.0-forge-1.20.1.jar     |Create Compressed             |create_compressed             |2.1.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️create_ultimate_factory-2.2.1-forge-1.20.1.jar  |Create: Ultimate Factory      |create_ultimate_factory       |2.2.1               |DONE      |Manifest: NOSIGNATURE
+		⚙️create_overpowered-2.4-forge-1.20.1.jar         |Create Overpowered            |create_overpowered            |2.3                 |DONE      |Manifest: NOSIGNATURE
+		⚙️📦create_furnace_lava_adapter-1.20.1-1.3.3.jar  |Create Furnace Lava Adapter   |create_furnace_lava_adapter   |1.3.3               |DONE      |Manifest: NOSIGNATURE
+		🍞 vanilladelight-1.20.1-1.0.4.jar                |Vanilla Delight               |vanilladelight                |1.20.1-1.0.4        |DONE      |Manifest: NOSIGNATURE
+		fabric-api-base-0.4.31+ef105b4977.jar             |Fabric API Base               |fabric_api_base               |0.4.31+ef105b4977   |DONE      |Manifest: NOSIGNATURE
+		🕶️ToolBelt-1.20.1-1.20.02.jar                    |Tool Belt                     |toolbelt                      |1.20.02             |DONE      |Manifest: NOSIGNATURE
+		⚙️createsifter-1.20.1-1.8.6-6.0.6.jar             |Create Sifter                 |createsifter                  |1.20.1-1.8.6-6.0.6  |DONE      |Manifest: NOSIGNATURE
+		⚙️createoreexcavation-1.20-1.6.5.jar              |Create Ore Excavation         |createoreexcavation           |1.6.5               |DONE      |Manifest: NOSIGNATURE
+		🏰 HopoBetterRuinedPortals-[1.20-1.20.2]-1.3.7b.ja|HopoBetterRuinedPortals       |hoporp                        |1.3.7               |DONE      |Manifest: NOSIGNATURE
+		⚙️📦createendertransmission-2.1.1-1.20.1.jar      |Create Ender Transmission     |createendertransmission       |2.1.1-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		kelvin-forge-1.20.1-0.4.0+5be6d27555.jar          |Kelvin                        |kelvin                        |1.20.1-0.4.0+5be6d27|DONE      |Manifest: NOSIGNATURE
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |DONE      |Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |DONE      |Manifest: NOSIGNATURE
+		⚙️🪵create_simple_ore_doubling-1.5.0-forge-1.20.1.|Create: Simple Ore Doubling   |create_simple_ore_doubling    |1.5.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️🪵create-renewable-brass-1.0.1.jar              |Create: Renewable Brass       |mr_create_renewablebrass      |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		-📈canary-mc1.20.1-0.3.3.jar                      |Canary                        |canary                        |0.3.3               |DONE      |Manifest: NOSIGNATURE
+		🍞 miners_delight-1.20.1-1.2.3.jar                |Miner's Delight               |miners_delight                |1.20.1-1.2.3        |DONE      |Manifest: NOSIGNATURE
+		🍞 MyNethersDelight-1.20.1-0.1.8.jar              |My Nether's Delight           |mynethersdelight              |1.20.1-1.7.5        |DONE      |Manifest: NOSIGNATURE
+		⚙️create_radar-0.3.1+mc1.20.1-all.jar             |Create: Radars                |create_radar                  |0.3                 |DONE      |Manifest: NOSIGNATURE
+		⚙️createbigcannons-5.10.0+mc.1.20.1-forge.jar     |Create Big Cannons            |createbigcannons              |5.10.0              |DONE      |Manifest: NOSIGNATURE
+		⚙️create-1.20.1-6.0.8.jar                         |Create                        |create                        |6.0.8               |DONE      |Manifest: NOSIGNATURE
+		⚙️🏰create-structures-0.1.1-1.20.1-FORGE.jar      |Create: Structures            |create_structures             |0.1.1               |DONE      |Manifest: NOSIGNATURE
+		⚙️create_central_kitchen-1.20.1-for-create-6.0.6-1|Create: Central Kitchen       |create_central_kitchen        |1.4.3b              |DONE      |Manifest: NOSIGNATURE
+		⚙️create_mecanical_extruder-1.20.1-1.6.11-6.0.6.ja|Create Mechanical Extruder    |create_mechanical_extruder    |1.20.1-1.6.10-6.0.6 |DONE      |Manifest: NOSIGNATURE
+		⚙️🪵create-metalwork-1.20.1-1.0.11-forge.jar      |Create: Metalwork             |createmetalwork               |1.20.1-1.0.11-forge |DONE      |Manifest: NOSIGNATURE
+		⚙️createornithopterglider-1.0.2-1.20.1.jar        |Create: Ornithopter Glider    |createornithopterglider       |1.0.2-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		⚙️sliceanddice-forge-3.6.0.jar                    |Create Slice & Dice           |sliceanddice                  |3.6.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️📕createenchantablemachinery-3.4.3+mc1.20.1-forg|Create: Enchantable Machinery |createenchantablemachinery    |3.4.3               |DONE      |Manifest: NOSIGNATURE
+		⚙️💮create-6.0.x-crushingwheelrecipeselector-1.0.1|Crushing Wheel Recipe Selector|crushingwheelrecipeselector   |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		🍞some-assembly-required-1.20.1-4.2.2.jar         |Some Assembly Required        |some_assembly_required        |1.20.1-4.2.2        |DONE      |Manifest: NOSIGNATURE
+		⚙️🪵create_crushing_quartz-forge-1.20.1-1.0.1.jar |Create: Crushing Quartz       |create_crushing_quartz        |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		⚙️🗜️CreateCompression-1.20.1-1.9.0.jar           |Create Compression            |createcompression             |1.9.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️create_ironworks-3.5.0-forge-1.20.1.jar         |Create: Ironworks             |create_ironworks              |3.5.0               |DONE      |Manifest: NOSIGNATURE
+		-📈ferritecore-6.0.1-forge.jar                    |Ferrite Core                  |ferritecore                   |6.0.1               |DONE      |Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		fabric-object-builder-api-v1-11.1.3+2174fc8477.jar|Fabric Object Builder API (v1)|fabric_object_builder_api_v1  |11.1.3+2174fc8477   |DONE      |Manifest: NOSIGNATURE
+		⚙️cbc_at_Forge_1.20.1_0.1.3b.jar                  |CBC Advanced Technology       |cbc_at                        |0.1.2b-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		⚙️create_more_features-0.8.0-forge-1.20.1.jar     |Create: more features         |create_more_features          |0.8.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️📦create_power_loader-2.0.3-mc1.20.1.jar        |Create: Power Loader          |create_power_loader           |2.0.3-mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		_📚PuzzlesLib-v8.1.33-1.20.1-Forge.jar            |Puzzles Lib                   |puzzleslib                    |8.1.33              |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		🪵exporbrecall-1.0.0.jar                          |Exp Orb Recall Mod            |exporbrecall                  |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		valkyrienskies-120-2.4.3.jar                      |Valkyrien Skies 2             |valkyrienskies                |2.4.3               |DONE      |Manifest: NOSIGNATURE
+		🚘clockwork-forge-0.5.3-[MELTING_POINT].jar       |Clockwork                     |vs_clockwork                  |1.20.1-0.5.3-forge-8|DONE      |Manifest: NOSIGNATURE
+		🚘trackwork-1.20.1-1.2.1.jar                      |Trackwork Mod                 |trackwork                     |1.2.1               |DONE      |Manifest: NOSIGNATURE
+		⚙️drivebywire-1.20.1-0.1.0.jar                    |Drive-By-Wire Mod             |drivebywire                   |0.1.0               |DONE      |Manifest: NOSIGNATURE
+		expandability-forge-9.0.4.jar                     |ExpandAbility                 |expandability                 |9.0.4               |DONE      |Manifest: NOSIGNATURE
+		🍞 forge-dungeonsdelight-1.20.1-1.2.10.jar        |Dungeon's Delight             |dungeonsdelight               |1.2.10              |DONE      |Manifest: NOSIGNATURE
+		⚙️📦createenderlink-1.4.0+mc1.20.1-forge.jar      |Create: Ender Link            |createenderlink               |1.4.0               |DONE      |Manifest: NOSIGNATURE
+		⚙️create_enchantment_industry-1.3.3-for-create-6.0|Create Enchantment Industry   |create_enchantment_industry   |1.3.3-for-create-6.0|DONE      |Manifest: NOSIGNATURE
+		⚙️🏰create_structures_arise-167.40.39 Release-forg|Create: Structures Arise      |create_structures_arise       |167.40.39           |DONE      |Manifest: NOSIGNATURE
+		⚙️createaddition-1.20.1-1.3.3.jar                 |Create Crafts & Additions     |createaddition                |1.20.1-1.3.3        |DONE      |Manifest: NOSIGNATURE
+		⚙️delivery_director-1.0.1-all.jar                 |Create: Delivery Director     |delivery_director             |1.0.1               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: fa5edd02-e85a-43b1-8ea1-ccf7efca153a
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.13

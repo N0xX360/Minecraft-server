@@ -1,0 +1,206 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 2026-01-02 20:44:06
+Description: Mod loading error has occurred
+
+java.lang.Exception: Mod Loading has failed
+	at net.minecraftforge.logging.CrashReportExtender.dumpModLoadingCrashReport(CrashReportExtender.java:60) ~[forge-1.20.1-47.4.13-universal.jar%23204!/:?] {re:classloading}
+	at net.minecraftforge.server.loading.ServerModLoader.load(ServerModLoader.java:37) ~[forge-1.20.1-47.4.13-universal.jar%23204!/:?] {re:classloading}
+	at net.minecraft.server.Main.main(Main.java:125) ~[server-1.20.1-20230612.114412-srg.jar%23199!/:?] {re:classloading}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.serverService(CommonLaunchHandler.java:103) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonServerLaunchHandler.lambda$makeService$0(CommonServerLaunchHandler.java:27) ~[fmlloader-1.20.1-47.4.13.jar%2369!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%2355!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: main
+Suspected Mods: NONE
+Stacktrace:
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[?:?] {}
+-- MOD createdynlight --
+Details:
+	Caused by 0: java.lang.NoClassDefFoundError: com/simibubi/create/foundation/config/ConfigBase
+		at java.lang.ClassLoader.defineClass1(Native Method) ~[?:?] {}
+		at java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[?:?] {}
+		at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:119) ~[securejarhandler-2.1.10.jar:?] {}
+		at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+		at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+		at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+		at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+		at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+		at top.leonx.dynlight.config.forge.CreateDynLightAllConfigsImpl.register(CreateDynLightAllConfigsImpl.java:56) ~[create-dyn-light-forge1.20.1+1.0.2.jar%23159!/:?] {re:classloading}
+		at top.leonx.dynlight.forge.CreateDynLightForge.<init>(CreateDynLightForge.java:22) ~[create-dyn-light-forge1.20.1+1.0.2.jar%23159!/:?] {re:classloading}
+		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
+		at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
+		at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
+		at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?] {}
+		at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?] {}
+		at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.13.jar%23201!/:?] {}
+		at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.13.jar%23200!/:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+		at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+		at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+		at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {re:computing_frames}
+		at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {re:computing_frames}
+		at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+	Mod File: /workspaces/Minecraft-server/servidor_minecraft/mods/create-dyn-light-forge1.20.1+1.0.2.jar
+	Failure message: Create Dynamic Light (createdynlight) has failed to load correctly
+		java.lang.NoClassDefFoundError: com/simibubi/create/foundation/config/ConfigBase
+	Mod Version: 1.0.2
+	Mod Issue URL: NOT PROVIDED
+	Exception message: java.lang.ClassNotFoundException: com.simibubi.create.foundation.config.ConfigBase
+Stacktrace:
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[?:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:137) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:137) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:?] {}
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:1017) ~[?:?] {}
+	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:119) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$15(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:229) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:219) ~[securejarhandler-2.1.10.jar:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:135) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?] {}
+	at top.leonx.dynlight.config.forge.CreateDynLightAllConfigsImpl.register(CreateDynLightAllConfigsImpl.java:56) ~[create-dyn-light-forge1.20.1+1.0.2.jar%23159!/:?] {re:classloading}
+	at top.leonx.dynlight.forge.CreateDynLightForge.<init>(CreateDynLightForge.java:22) ~[create-dyn-light-forge1.20.1+1.0.2.jar%23159!/:?] {re:classloading}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?] {}
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.constructMod(FMLModContainer.java:77) ~[javafmllanguage-1.20.1-47.4.13.jar%23201!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$buildTransitionHandler$5(ModContainer.java:126) ~[fmlcore-1.20.1-47.4.13.jar%23200!/:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[?:?] {}
+	at java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796) ~[?:?] {}
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?] {}
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?] {re:computing_frames}
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1030-azure
+	Java Version: 17.0.17, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1575663104 bytes (1502 MiB) / 2147483648 bytes (2048 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7997.99
+	Virtual memory used (MB): 4172.78
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx12G
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		🏰 dungeons-and-taverns-pillager-outpost-rework-1.|Dungeons and Taverns Pillager |mr_dungeons_andtavernspillager|1.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterDungeons-1.20-Forge-4.0.4.jar       |YUNG's Better Dungeons        |betterdungeons                |1.20-Forge-4.0.4    |COMMON_SET|Manifest: NOSIGNATURE
+		🧟‍♂️⤴️grabbymobs-1.20.1-1.6.jar                  |Grabby Mobs                   |grabbymobs                    |1.6                 |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterWitchHuts-1.20-Forge-3.0.3.jar      |YUNG's Better Witch Huts      |betterwitchhuts               |1.20-Forge-3.0.3    |COMMON_SET|Manifest: NOSIGNATURE
+		🧟‍♂️⤴️zombiehorsespawn-1.20.1-5.2.jar            |Zombie Horse Spawn            |zombiehorsespawn              |5.2                 |COMMON_SET|Manifest: NOSIGNATURE
+		🪵UniversalBoneMeal-v8.0.1-1.20.1-Forge.jar       |Universal Bone Meal           |universalbonemeal             |8.0.1               |COMMON_SET|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		🏰 YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar |YUNG's Better Ocean Monuments |betteroceanmonuments          |1.20-Forge-3.0.4    |COMMON_SET|Manifest: NOSIGNATURE
+		🪵naturalcharcoal-1.20.1-1.1.jar                  |Natural Charcoal              |naturalcharcoal               |1.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		dynamiclights-v1.9-mc1.17-1.21.9-mod.jar          |Dynamic Lights                |dynamiclights                 |1.9+mod             |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterCaves-1.20.1-Forge-2.0.5.jar        |YUNG's Better Caves           |bettercaves                   |1.20.1-Forge-2.0.5  |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-ancient-city-overhaul-1.ja|Dungeons and Taverns Ancient C|mr_dungeons_andtavernsancientc|1                   |COMMON_SET|Manifest: NOSIGNATURE
+		_📚YungsApi-1.20-Forge-4.0.6.jar                  |YUNG's API                    |yungsapi                      |1.20-Forge-4.0.6    |COMMON_SET|Manifest: NOSIGNATURE
+		mixinextras-forge-0.4.1.jar                       |MixinExtras                   |mixinextras                   |0.4.1               |COMMON_SET|Manifest: NOSIGNATURE
+		_📚forge-runiclib-1.20.1-4.3.7.jar                |RunicLib                      |runiclib                      |4.3.7               |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterDesertTemples-1.20-Forge-3.0.3.jar  |YUNG's Better Desert Temples  |betterdeserttemples           |1.20-Forge-3.0.3    |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 HopoBetterUnderwaterRuins-[1.20.1-1.20.4]-1.1.5|HopoBetterUnderwaterRuins     |hopour                        |1.1.4               |COMMON_SET|Manifest: NOSIGNATURE
+		🧟‍♂️⤴️skeletonhorsespawn-1.20.1-4.1.jar          |Skeleton Horse Spawn          |skeletonhorsespawn            |4.1                 |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-swamp-hut-rework-1.jar    |Dungeons and Taverns Swamp Hut|mr_dungeons_andtavernsswamphut|1                   |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 moredelight-25.07.28-1.20-forge.jar            |More Delight                  |moredelight                   |25.07.28-1.20-forge |COMMON_SET|Manifest: NOSIGNATURE
+		-structure_layout_optimizer-forge-1.0.11.jar      |Structure Layout Optimizer    |structure_layout_optimizer    |1.0.11              |COMMON_SET|Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterNetherFortresses-1.20-Forge-2.0.6.ja|YUNG's Better Nether Fortresse|betterfortresses              |1.20-Forge-2.0.6    |COMMON_SET|Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.13-universal.jar                |Forge                         |forge                         |47.4.13             |COMMON_SET|Manifest: NOSIGNATURE
+		🪵mineralchance-1.20.1-3.8.jar                    |Mineral Chance                |mineralchance                 |3.8                 |COMMON_SET|Manifest: NOSIGNATURE
+		🏰DungeonsArise-1.20.x-2.1.58-release.jar         |When Dungeons Arise           |dungeons_arise                |2.1.58-1.20.x       |COMMON_SET|Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 FarmersDelight-1.20.1-1.2.9.jar                |Farmer's Delight              |farmersdelight                |1.20.1-1.2.9        |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 vanilladelight-1.20.1-1.0.4.jar                |Vanilla Delight               |vanilladelight                |1.20.1-1.0.4        |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 endersdelight-forge-1.20.1-1.1.3.jar           |Ender's Delight               |endersdelight                 |1.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-stronghold-rework-1.jar   |Dungeons and Taverns Stronghol|mr_dungeons_andtavernsstrongho|1                   |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 HopoBetterRuinedPortals-[1.20-1.20.2]-1.3.7b.ja|HopoBetterRuinedPortals       |hoporp                        |1.3.7               |COMMON_SET|Manifest: NOSIGNATURE
+		_📚resourcefulconfig-forge-1.20.1-2.1.3.jar       |Resourcefulconfig             |resourcefulconfig             |2.1.3               |COMMON_SET|Manifest: NOSIGNATURE
+		-servercore-forge-1.5.2+1.20.1.jar                |ServerCore                    |servercore                    |1.5.2+1.20.1        |COMMON_SET|Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |COMMON_SET|Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |COMMON_SET|Manifest: NOSIGNATURE
+		⚙️create-1.20.1-6.0.8.jar                         |Create                        |create                        |6.0.8               |COMMON_SET|Manifest: NOSIGNATURE
+		🪵ore_plus-2.15.41.2-x4.jar                       |Ore Plus                      |mr_ore_plus                   |2.15.41.2-x4        |COMMON_SET|Manifest: NOSIGNATURE
+		_📚collective-1.20.1-8.13.jar                     |Collective                    |collective                    |8.13                |COMMON_SET|Manifest: NOSIGNATURE
+		🍞some-assembly-required-1.20.1-4.2.2.jar         |Some Assembly Required        |some_assembly_required        |1.20.1-4.2.2        |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsExtras-1.20-Forge-4.0.3.jar               |YUNG's Extras                 |yungsextras                   |1.20-Forge-4.0.3    |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 dungeons-and-taverns-3.0.3.f.jar               |Dungeons and Taverns          |mr_dungeons_andtaverns        |3.0.3.f             |COMMON_SET|Manifest: NOSIGNATURE
+		-canary-mc1.20.1-0.3.3.jar                        |Canary                        |canary                        |0.3.3               |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 miners_delight-1.20.1-1.2.3.jar                |Miner's Delight               |miners_delight                |1.20.1-1.2.3        |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 MyNethersDelight-1.20.1-0.1.8.jar              |My Nether's Delight           |mynethersdelight              |1.20.1-1.7.5        |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterStrongholds-1.20-Forge-4.0.3.jar    |YUNG's Better Strongholds     |betterstrongholds             |1.20-Forge-4.0.3    |COMMON_SET|Manifest: NOSIGNATURE
+		_📚resourcefullib-forge-1.20.1-2.1.29.jar         |Resourceful Lib               |resourcefullib                |2.1.29              |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterEndIsland-1.20-Forge-2.0.6.jar      |YUNG's Better End Island      |betterendisland               |1.20-Forge-2.0.6    |COMMON_SET|Manifest: NOSIGNATURE
+		_📚PuzzlesLib-v8.1.33-1.20.1-Forge.jar            |Puzzles Lib                   |puzzleslib                    |8.1.33              |COMMON_SET|Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		🪵exporbrecall-1.0.0.jar                          |Exp Orb Recall Mod            |exporbrecall                  |1.0.0               |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 HopoBetterMineshaft-[1.20.1-1.20.4]-1.2.2d.jar |HopoBetterMineshaft           |hopo                          |1.2.2               |COMMON_SET|Manifest: NOSIGNATURE
+		🏰 YungsBetterMineshafts-1.20-Forge-4.0.4.jar     |YUNG's Better Mineshafts      |bettermineshafts              |1.20-Forge-4.0.4    |COMMON_SET|Manifest: NOSIGNATURE
+		🍞 forge-dungeonsdelight-1.20.1-1.2.10.jar        |Dungeon's Delight             |dungeonsdelight               |1.2.10              |COMMON_SET|Manifest: NOSIGNATURE
+		-FastEvent-1.20.1-1.1.1.jar                       |FastEvent                     |fast_event                    |1.1.1               |COMMON_SET|Manifest: NOSIGNATURE
+		create-dyn-light-forge1.20.1+1.0.2.jar            |Create Dynamic Light          |createdynlight                |1.0.2               |ERROR     |Manifest: NOSIGNATURE
+		🏰 YungsBetterJungleTemples-1.20-Forge-2.0.5.jar  |YUNG's Better Jungle Temples  |betterjungletemples           |1.20-Forge-2.0.5    |COMMON_SET|Manifest: NOSIGNATURE
+	Crash Report UUID: 282aa004-21f3-4563-a898-91885d4a7fdc
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.13
